@@ -76,6 +76,9 @@ $('.dropdown-menu a').on('click', function(){
 			<tr>
 				<td>3</td>
 			</tr>
+			<tr>
+				<td>3</td>
+			</tr>
 		
 		</table>
 
