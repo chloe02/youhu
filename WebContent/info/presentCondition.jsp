@@ -61,7 +61,7 @@
 								
 								chart.data = [ {
 									state: "인도(주인)",
-									litres : 501.9
+									litres : <%=%>
 								}, {
 									state : "입양분양",
 									litres : 301.9
