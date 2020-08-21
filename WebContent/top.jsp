@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-   pageEncoding="UTF-8" import="user.domain.*"%>
+   pageEncoding="UTF-8" import="info.domain.*"%>
 <% 
  String myctx=request.getContextPath();
  %>
@@ -75,7 +75,7 @@
 
                   <li class="nav-item"><a class="nav-link" href="#">고객센터</a></li>
 
-                  <li class="nav-item"><a class="nav-link" href="<%=myctx %>/info/infoCenter.jsp">정보센터</a></li>
+                  <li class="nav-item"><a class="nav-link" href="<%=myctx%>/info/infoCenter.jsp">정보센터</a></li>
 
                   <li class="nav-item"><a class="nav-link" href="#">후원처</a></li>
 

@@ -4,10 +4,15 @@
  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="info.mapper.InfoMapper">
 
-	<!-- 연도별 현황 가져오기  -->
-	<select id="selectByYears" parameterType="string"
+	<!-- 연도별 종류별 현황 가져오기  -->
+	<select id="selectByAnimal" parameterType="string"
+		resultType="Info">
+		select <include refid="Animal_column"/>from condition where years=#{value} 
+	</select>
+	
+	<!-- 연도별 지역별 현황 가져오기 -->
+	<select id="selectByArea" parameterType="string"
 		resultType="Info">
 		select from condition where years=#{value} 
 	</select>
-
 </mapper>

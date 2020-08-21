@@ -96,8 +96,8 @@
 								
 								chart1.data = [ {
 									
-									"gu" : ${gu},
-									"value" : ${gu_sum}
+									"gu" : f ,
+									"value" :123 
 									}
 								}];
 
