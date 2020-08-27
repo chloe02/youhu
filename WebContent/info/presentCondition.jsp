@@ -61,7 +61,7 @@
 								
 								chart.data = [ {
 									state: "인도(주인)",
-									litres : <%=%>
+									litres : 100
 								}, {
 									state : "입양분양",
 									litres : 301.9
@@ -98,7 +98,7 @@
 									
 									"gu" : f ,
 									"value" :123 
-									}
+									
 								}];
 
 								// Create axes
