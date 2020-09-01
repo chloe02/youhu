@@ -7,8 +7,6 @@ import java.sql.SQLException;
 import java.util.List;
 import info.domain.DAOMyBatisBase;
 import org.apache.ibatis.session.SqlSession;
-//import org.apache.ibatis.session.SqlSession;
-
 
 
 public class infoDAO extends DAOMyBatisBase{

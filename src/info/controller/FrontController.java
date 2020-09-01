@@ -21,7 +21,7 @@ import javax.servlet.http.HttpServletResponse;
 		initParams = { 
 				@WebInitParam(
 					name = "config", 
-					value = "C:\\Myjava\\workspace\\MVCWeb\\WebContent\\WEB-INF\\Command.properties")
+					value = "C:\\Myjava\\workspace\\YOUHU\\WebContent\\WEB-INF\\Command.properties")
 		})
 
 public class FrontController extends HttpServlet {
