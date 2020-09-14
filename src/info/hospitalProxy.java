@@ -14,7 +14,13 @@ import java.util.Map;
 
 public class hospitalProxy {
 	public String getData(String keyword, String start, String display, String sort) {
-		String url="http://openapi.seoul.go.kr:8088/sample/xml/LOCALDATA_020301/1/5/667259714363686c34387371515879";  //url+인증키
+		String key="667259714363686c34387371515879";
+		String type="xml";
+		String service="SeoulAnimalHospital";
+		String url="http://openapi.seoul.go.kr:8088/sample/xml/SeoulAnimalHospital/1/5/"
+				+ key;  //url+인증키
+		int start_index=1;
+		int end_index=10;
 		String text = null;
         try {
             text = URLEncoder.encode(keyword, "UTF-8");
