@@ -22,13 +22,6 @@ $(function(){
 		<div class="row">
 			<div class="col-md-2">
 				<div class="btn-group" style="float: left; width: 100%">
-					<button type="button" class="btn btn-info dropdown-toggle"
-						data-toggle="dropdown">지역별</button>
-					<div class="dropdown-menu">
-						<a class="dropdown-item" href="#">1</a> 
-						<a class="dropdown-item" href="#">2</a> 
-						<a class="dropdown-item" href="#">3</a>
-					</div>
 				</div>
 			</div>
 			<div class="col-md-8">
@@ -51,12 +44,6 @@ $(function(){
 	</tr>
 	<tr>
 		<td>1</td>
-	</tr>
-	<tr>
-		<td>2</td>
-	</tr>
-	<tr>
-		<td>3</td>
 	</tr>
 
 </table>

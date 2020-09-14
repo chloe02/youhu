@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
    pageEncoding="UTF-8" import="info.domain.*"%>
 <% 
- String myctx=request.getContextPath();
+ //String myctx=request.getContextPath();
  %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -10,15 +10,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Insert title here</title>
 
-
-
-
 <link rel="stylesheet"
    href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet"
    href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-   
 <!-- jQuery library -->
 <script
    src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -28,7 +24,6 @@
 <!-- Latest compiled JavaScript -->
 <script
    src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-
 <style>
 .carousel-caption {
     position: absolute;
@@ -80,7 +75,7 @@
 
                   <li class="nav-item"><a class="nav-link" href="#">고객센터</a></li>
 
-                  <li class="nav-item"><a class="nav-link" href="<%=myctx%>/info/infoCenter.jsp">정보센터</a></li>
+                  <li class="nav-item"><a class="nav-link" href="#/info/infoCenter.jsp">정보센터</a></li>
 
                   <li class="nav-item"><a class="nav-link" href="#">후원처</a></li>
 

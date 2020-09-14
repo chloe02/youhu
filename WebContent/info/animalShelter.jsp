@@ -40,14 +40,7 @@ $('.dropdown-menu a').on('click', function(){
 		<p></p>
 			<div class="col-md-2">
 				<div class="btn-group" style="float: left; width: 100%">
-				 	<button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">
-						종류별	
-					</button>
-					<div class="dropdown-menu">
-						<a class="dropdown-item" href="#">1</a> 
-						<a class="dropdown-item" href="#">2</a> 
-						<a class="dropdown-item" href="#">3</a>
-					</div>
+				 	
 				</div>
 			</div>
 			<div class="col-md-8">
@@ -67,19 +60,10 @@ $('.dropdown-menu a').on('click', function(){
 				<th rowspan="10" width="50%" id="shelterMap">지도</th>
 				<th>보호소 리스트</th>
 			</tr>
+			
 			<tr>
-				<td>1</td>
-			</tr>
-			<tr>
-				<td>2</td>
-			</tr>
-			<tr>
-				<td>3</td>
-			</tr>
-			<tr>
-				<td>4</td>
-			</tr>
-		
+				<td>11111</td>
+			</tr>		
 		</table>
 
 	</div>

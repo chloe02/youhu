@@ -6,7 +6,6 @@
 
 	<typeAliases>
 		<typeAlias type="info.domain.infoVO" alias="info"/>	
-	
 	</typeAliases>
 
 	<environments default="MyDBCP">
@@ -29,7 +28,6 @@
 	</environments>
 	
 	<mappers>
-		<mapper resource="common/mapper/InfoMapper.xml" />
-
+		<mapper resource="info/mapper/InfoMapper.xml" />
 	</mappers>
 </configuration>

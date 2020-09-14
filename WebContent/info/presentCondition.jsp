@@ -1,7 +1,22 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8" import="info.domain.*, java.util.*"%>
+	
 <jsp:include page="/top.jsp" />
-
+<%
+	String years=request.getParameter("years"); 
+	infoDAO dao=new infoDAO();
+	List<infoVO> arrA=null;
+	List<infoVO> arrS=null;
+	
+	if(years==null){
+		arrA=dao.selectByArea("2019");
+		arrS=dao.selectByDog("2019");		
+	}
+	
+	if(arrA!=null&&arrS!=null){
+		for(infoVO iv:arrA){
+		
+%>
 <div class="text-left p-3 ">
 	<div class="row" style="margin-bottom:18px">
 		<div class="col-md-12" >
@@ -10,12 +25,12 @@
 	</div>
 	
 	<div class="btn-group "  style="margin-bottom:18px">
-		<button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" >종류별</button>
-		<div class="dropdown-menu">
-			<a class="dropdown-item" href="#dog">개</a> 
-			<a class="dropdown-item" href="#cat">고양이</a> 
-			<a class="dropdown-item" href="#etc">기타</a>
-		</div>
+		<select name="findType" id="findType" class="form-control m-2" >
+			<option value="">::종류별::</option>
+			<option value="dog">개</option>
+			<option value="cat">고양이</option>
+			<option value="etc">기타</option>
+		</select>
 	</div>
 	
 	<form class="container">
@@ -61,16 +76,16 @@
 								
 								chart.data = [ {
 									state: "인도(주인)",
-									litres : 100
+									litres : <%=iv.getDog_trans()%>
 								}, {
 									state : "입양분양",
-									litres : 301.9
+									litres : <%=iv.getDog_adopt()%>
 								}, {
 									state : "폐사안락사",
-									litres : 201.1
+									litres : <%=iv.getDog_death()%>
 								}, {
 									state : "계류기증",
-									litres : 165.8
+									litres : <%=iv.getDog_moor()%>
 								} ];
 
 								chart.innerRadius = am4core.percent(40);
@@ -96,10 +111,14 @@
 								
 								chart1.data = [ {
 									
-									"gu" : f ,
-									"value" :123 
-									
+									"gu" : <%=iv.getGu()%> ,
+									"value" :<%=iv.getGu_sum()%> 
+									}
 								}];
+								<%
+									}//for--
+								}//if
+								%>
 
 								// Create axes
 								var categoryAxis = chart1.xAxes
