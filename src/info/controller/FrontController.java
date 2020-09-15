@@ -27,7 +27,6 @@ import javax.servlet.http.HttpServletResponse;
 public class FrontController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private HashMap<String, Object> cmdMap=new HashMap<>();
-	//Command.properties에 설정되어 있는 값들을 해쉬맵에 옮길예정
 
 	public void init(ServletConfig conf) throws ServletException {
 		System.out.println("init() 호출됨...");
@@ -39,25 +38,24 @@ public class FrontController extends HttpServlet {
 		try {
 			FileInputStream fis=new FileInputStream(props);
 			pr.load(fis); 
-			//Command.properties파일 정보를 properties로 옮겨보자.
+
 			if(fis!=null)fis.close();
-		
-			//pr의 key값들을 추출해보자.
+
 			Enumeration<Object> en=pr.keys();
 			
 			while(en.hasMoreElements()) {
-				String cmd=en.nextElement().toString(); //key값 => /index.do
+				String cmd=en.nextElement().toString(); 
 				System.out.println("cmd="+cmd);
-				String className=pr.getProperty(cmd);//value값 "common.controller.IndexAction"
+				String className=pr.getProperty(cmd);
 				
 				if(className!=null) {
 					className=className.trim();
 				}
 				System.out.println("className="+className);
-				//className의 클래스를 인스턴스화 
+				
 				Class<?>cls = Class.forName(className);
 				Object cmdInstance=cls.newInstance();
-				//해당 클래스의 객체를 생성해줌
+				
 				cmdMap.put(cmd, cmdInstance);
 				
 			}//while--------------
@@ -77,9 +75,8 @@ public class FrontController extends HttpServlet {
 	}
 	
 	protected void process(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException{
-		//1. 클라이언트의 요청 uri를 분석해보자.
-		String cmdUri=req.getServletPath(); // /index.do, /test.do
-		//System.out.println("cmdUri="+cmdUri);
+		String cmdUri=req.getServletPath(); 
+		
 		
 		Object instance=cmdMap.get(cmdUri);
 		if(instance==null) {
@@ -89,20 +86,20 @@ public class FrontController extends HttpServlet {
 		AbstractAction action = (AbstractAction)instance;
 		try {
 			action.execute(req,res);
-			//execute에서는 로직을 수행한 뒤에 뷰페이지와 이동방식을 지정
+			
 			String viewPage=action.getViewPage();
 			boolean isRedirect=action.isRedirect();
 			if(isRedirect) {
-				//redirect 방식으로 이동 
+				
 				res.sendRedirect(viewPage);
 			}else {
-				//forward 방식으로 이동
+				
 				RequestDispatcher disp=req.getRequestDispatcher(viewPage);
 				disp.forward(req, res);
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
 			throw new ServletException(e);
-		} //서브컨트롤러(액션)가 수행할 메소드를 호출한다.
+		} 
 	}
 }

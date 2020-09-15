@@ -2,7 +2,6 @@
     pageEncoding="UTF-8"%>
 <jsp:include page="/top.jsp"/>
 
-
 <div class="container p-3 my-3 bg-darktext-white">
 <h1>센터소개</h1><br>
 <h2>설립목적</h2><br>
@@ -38,7 +37,5 @@
     	 	</iframe></td>
     	</table>
       </div>
-      
-      
 </div>
 <jsp:include page="/foot.jsp"/>
